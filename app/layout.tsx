@@ -31,6 +31,14 @@ export const metadata = {
   Autor: "Jonathan Muñoz Arribas",
   keywords:
     "Desarrollador, Frontend, Backend, Fullstack, Web, Móvil, Apps, React, Node, Next, Typescript, Javascript, HTML, CSS, Tailwind, Material, UI, UX, Design, Portfolio, jomuDev",
+  openGraph: {
+    title: "jomuDev - Portfolio",
+    description: "Porfolio de Jonathan Muñoz Arribas (jomuDev).",
+    image: "/icons/icon-512x512.png",
+    url: "https://www.jomudev.com",
+    type: "website",
+    site_name: "jomuDev",
+  },
 };
 
 export default function RootLayout({
