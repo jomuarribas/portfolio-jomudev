@@ -119,22 +119,19 @@ const DraggableDiv: React.FC<DraggableDivProps> = ({
         <div className="text-white">{title}</div>{" "}
         <div className="flex">
           <div
-            className="relative flex items-center justify-center w-4 h-4 bg-red-500 rounded-full mr-2 cursor-pointer"
+            className="flex items-center text-[12px] text-gray-800 justify-center w-4 h-4 bg-red-500 rounded-full mr-2 cursor-pointer"
             onClick={onClose}
           >
-            <p className="absolute text-[var(--primary-color)] text-[12px]">
-              x
-            </p>
+            x
           </div>
-          <div className="relative flex items-center justify-center w-4 h-4 bg-yellow-500 rounded-full mr-2 p-2 cursor-pointer">
-            <p className="absolute text-[var(--primary-color)] text-[16px]">
-              -
-            </p>
+          <div
+            className="flex items-center text-[16px] text-gray-800 justify-center w-4 h-4 bg-yellow-500 rounded-full mr-2 cursor-pointer"
+            onClick={onClose}
+          >
+            -
           </div>
-          <div className="relative flex items-center justify-center w-4 h-4 bg-green-500 rounded-full p-2 cursor-pointer">
-            <p className="rotate-45 absolute text-[var(--primary-color)] text-[8px]">
-              {"< >"}
-            </p>
+          <div className="rotate-45 flex items-center text-[8px] text-gray-800 justify-center w-4 h-4 bg-green-500 rounded-full cursor-pointer">
+            {"< >"}
           </div>
         </div>
       </div>

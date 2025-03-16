@@ -27,7 +27,7 @@ export default function Home() {
   return (
     <div>
       <motion.div
-        className="flex flex-col text-white items-center space-x-2 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2"
+        className={`hidden sm:flex flex-col text-white items-center space-x-2 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2`}
         initial={{ opacity: 0 }}
         animate={{ opacity: 0.4 }}
         transition={{ duration: 2 }}
