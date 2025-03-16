@@ -1,103 +1,85 @@
-import Image from "next/image";
+"use client";
+import { useEffect, useRef } from "react";
+import Desktop from "./components/desktop/Desktop";
+import Header from "./components/Header/Header";
+import NavDown from "./components/NavDown/NavDown";
+import { motion } from "framer-motion";
+import { useWindowManager } from "./context/windowManagerContext";
+import Welcome from "./components/info/welcome";
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  const { addWindow } = useWindowManager();
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+  const hasOpenedWelcome = useRef(false);
+
+  useEffect(() => {
+    if (!hasOpenedWelcome.current) {
+      if (window.innerWidth < 768) {
+        addWindow("Bienvenid@", <Welcome />, "95%", "70%");
+        hasOpenedWelcome.current = true;
+      } else {
+        addWindow("Bienvenid@", <Welcome />, "50%", "60%");
+        hasOpenedWelcome.current = true;
+      }
+    }
+  }, [addWindow]);
+
+  return (
+    <div>
+      <motion.div
+        className="flex flex-col text-white items-center space-x-2 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 0.4 }}
+        transition={{ duration: 2 }}
+      >
+        <svg
+          version="1.0"
+          xmlns="http://www.w3.org/2000/svg"
+          width="200.000000pt"
+          height="140.000000pt"
+          viewBox="0 0 990.000000 1084.000000"
+          preserveAspectRatio="xMidYMid meet"
+          className="text-sky-300"
+        >
+          <g
+            transform="translate(0.000000,1084.000000) scale(0.100000,-0.100000)"
+            fill="currentColor"
+            stroke="none"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+            <path
+              d="M7587 10403 l-708 -425 7 -3906 7 -3907 -1224 -729 -1224 -728 2
+-122 c2 -66 6 -226 9 -353 6 -231 6 -233 28 -228 11 3 120 20 241 40 693 109
+1160 252 1689 517 306 153 874 482 1384 801 l513 321 -2 4440 c-2 2443 -5
+4500 -8 4573 l-6 131 -708 -425z"
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+            <path
+              d="M4675 10294 c-1476 -94 -2794 -799 -3677 -1964 -544 -719 -872 -1557
+-975 -2490 -24 -217 -24 -763 0 -980 69 -623 233 -1189 497 -1715 100 -200
+247 -454 266 -462 10 -3 624 324 642 342 3 3 -10 28 -28 57 -350 556 -554
+1133 -637 1803 -25 197 -24 731 0 930 63 510 188 940 402 1380 586 1204 1722
+2064 3035 2299 286 51 401 60 750 60 349 0 464 -9 750 -60 269 -48 580 -137
+813 -232 l97 -40 0 397 0 398 -149 47 c-311 99 -675 175 -1011 211 -138 15
+-644 27 -775 19z"
+            />
+            <path
+              d="M4220 8271 l-1835 -1089 -5 -1961 -5 -1962 -695 -408 -695 -409 -3
+-845 -2 -845 832 485 c458 267 1088 634 1401 816 l567 330 0 2091 0 2091 416
+250 c229 138 421 251 425 253 5 2 10 -1117 11 -2550 l3 -2554 713 429 712 429
+0 3269 c0 1798 -1 3269 -2 3269 -2 0 -829 -491 -1838 -1089z"
+            />
+            <path
+              d="M8560 8127 l0 -607 62 -108 c266 -461 442 -1008 515 -1597 25 -201
+25 -732 -1 -935 -72 -584 -244 -1118 -514 -1594 l-62 -109 0 -606 1 -606 51
+55 c625 677 1065 1582 1218 2503 53 325 64 459 64 827 0 367 -11 511 -64 828
+-155 925 -593 1823 -1218 2502 l-51 55 -1 -608z"
+            />
+          </g>
+        </svg>
+        <p className="text-4xl text-sky-200">jomuDev</p>
+      </motion.div>
+      <Header />
+      <Desktop />
+      <NavDown />
     </div>
   );
 }
