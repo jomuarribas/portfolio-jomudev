@@ -5,7 +5,7 @@ export default function InfoData() {
     <section className="flex flex-col gap-6bg-[var(--background-color)] text-[var(--primary-color)]">
       <div className="py-4 bg-[var(--primary-color)] mb-4 rounded-2xl flex flex-wrap gap-4 justify-center">
         <Image
-          src="/miniatura.jpeg"
+          src="/miniatura.webp"
           alt="Foto de José Muñoz"
           width={200}
           height={200}
@@ -13,14 +13,14 @@ export default function InfoData() {
         />
         <div className="flex flex-col text-white items-center justify-center sm:items-start px-2">
           <h2 className="text-3xl text-center">Jonathan Muñoz Arribas</h2>
-          <p className="text-sky-400 text-lg">Desarrollador Full Stack</p>
+          <p className="text-sky-300 text-lg">Desarrollador Full Stack</p>
           <a href="mailto:info@jomudev.com" className="text-sm mt-4">
             info@jomudev.com
           </a>
         </div>
       </div>
 
-      <p className="text-[var(--primary-color-dark)] leading-relaxed text-justify px-2">
+      <p className="text-gray-700 leading-relaxed text-justify px-2">
         Estoy en un emocionante proceso de transformación profesional, donde he
         pasado de ser productor musical a convertirme en desarrollador Full
         Stack. Este cambio ha enriquecido mi vida profesional y personal,
@@ -30,7 +30,7 @@ export default function InfoData() {
 
       <div className="flex flex-col gap-3 px-2">
         <h2 className="text-2xl mt-4 font-bold">Habilidades Técnicas</h2>
-        <ul className="list-disc pl-6 space-y-1 text-[var(--primary-color-dark)]">
+        <ul className="list-disc pl-6 space-y-1 text-gray-700">
           <li>
             <strong>Frontend:</strong> React, Next.js, HTML5, CSS3, TailwindCSS,
             JavaScript, TypeScript
@@ -53,7 +53,7 @@ export default function InfoData() {
 
       <div className="flex flex-col mt-4 gap-3 px-2">
         <h2 className="text-2xl font-bold">Habilidades Blandas</h2>
-        <ul className="list-disc pl-6 space-y-1 text-[var(--primary-color-dark)]">
+        <ul className="list-disc pl-6 space-y-1 text-gray-700">
           <li>
             Empatía y Comunicación: Comprender y transmitir ideas claramente.
           </li>
@@ -73,7 +73,7 @@ export default function InfoData() {
 
       <div className="flex flex-col gap-3 text-justify px-2">
         <h2 className="text-2xl mt-4 font-bold">Motivación y Filosofía</h2>
-        <p className="text-[var(--primary-color-dark)] leading-relaxed">
+        <p className="text-gray-700 leading-relaxed">
           Disfruto construyendo soluciones que mejoren la vida de las personas y
           enfrentando desafíos técnicos que impulsen mi crecimiento. Creo en la
           innovación constante, la atención al detalle y la creación de
@@ -83,7 +83,7 @@ export default function InfoData() {
 
       <div className="flex flex-col mt-4 gap-3 px-2">
         <h2 className="text-2xl font-bold">Logros Relevantes</h2>
-        <ul className="list-disc pl-6 space-y-1 text-[var(--primary-color-dark)]">
+        <ul className="list-disc pl-6 space-y-1 text-gray-700">
           <li>Más de una década de experiencia en producción musical.</li>
           <li>Desarrollo de aplicaciones Full Stack funcionales.</li>
           <li>
@@ -95,7 +95,7 @@ export default function InfoData() {
 
       <div className="flex flex-col mt-4 gap-3 text-justify px-2">
         <h2 className="text-2xl font-bold">Inspiración</h2>
-        <blockquote className="italic text-[var(--primary-color-dark)]">
+        <blockquote className="italic text-gray-700">
           El único límite para nuestro crecimiento es nuestra imaginación y
           voluntad de aprender.
         </blockquote>
@@ -103,7 +103,7 @@ export default function InfoData() {
 
       <div className="flex flex-col mt-4 gap-3 text-justify px-2">
         <h2 className="text-2xl font-bold">Hobbies Relacionados</h2>
-        <p className="text-[var(--primary-color-dark)] leading-relaxed">
+        <p className="text-gray-700 leading-relaxed">
           La música sigue siendo una gran fuente de inspiración para mí. También
           disfruto aprendiendo sobre nuevas herramientas de desarrollo,
           explorando el diseño UI/UX, lo que complementa mi enfoque creativo
@@ -113,7 +113,7 @@ export default function InfoData() {
 
       <div className="flex flex-col mt-4 pb-4 gap-3 text-justify px-2">
         <h2 className="text-2xl font-bold">¡Conecta Conmigo!</h2>
-        <p className="text-[var(--primary-color-dark)] leading-relaxed">
+        <p className="text-gray-700 leading-relaxed">
           Estoy buscando nuevas oportunidades emocionantes como Desarrollador
           web. Si tienes un proyecto innovador o simplemente quieres conectar,
           no dudes en contactarme. ¡Estoy listo para marcar la diferencia!

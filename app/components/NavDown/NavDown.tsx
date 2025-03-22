@@ -5,19 +5,35 @@ import InfoData from "../info/InfoData";
 import Image from "next/image";
 import { JSX } from "react";
 import WorkExperience from "../info/workExperience";
-import ContactForm from "../info/contact";
 import Education from "../info/education";
 import Projects from "../info/projects";
+import ContactShell from "../info/contactShell";
 
 export default function NavDown() {
   const { addWindow } = useWindowManager();
   const { closeAllWindows } = useWindowManager();
 
-  const handleOpenWindow = (title: string, component: JSX.Element) => {
+  const handleOpenWindow = (
+    title: string,
+    component: JSX.Element,
+    bgColor: string
+  ) => {
     if (window.innerWidth < 768) {
-      addWindow(title, component, "95%", "80%");
+      addWindow(title, component, bgColor, "95%", "80%");
     } else {
-      addWindow(title, component, "70%", "60%");
+      addWindow(title, component, bgColor, "70%", "60%");
+    }
+  };
+
+  const handleOpenTerminal = (
+    title: string,
+    component: JSX.Element,
+    bgColor: string
+  ) => {
+    if (window.innerWidth < 768) {
+      addWindow(title, component, bgColor, "95%", "60%");
+    } else {
+      addWindow(title, component, bgColor, "40%", "50%");
     }
   };
 
@@ -39,7 +55,7 @@ export default function NavDown() {
           alt="Logo de jomuDev"
           width={350}
           height={200}
-          className="filter invert"
+          className="animate-pulse"
         />
       </motion.div>
       <div className="flex gap-1.5 items-center px-3 py-1 justify-center rounded-2xl border-[0.8px] border-gray-500 bg-gradient-to-r from-[#1a1a1a] to-[#565656] text-white">
@@ -68,7 +84,7 @@ export default function NavDown() {
           </svg>
         </div>
         <div
-          onClick={() => handleOpenWindow("Quién soy", <InfoData />)}
+          onClick={() => handleOpenWindow("Quién soy", <InfoData />, "white")}
           className="flex items-center justify-center hover:transform hover:scale-110 transition-all cursor-pointer"
         >
           <svg
@@ -84,7 +100,9 @@ export default function NavDown() {
           </svg>
         </div>
         <div
-          onClick={() => handleOpenWindow("Mis proyectos", <Projects />)}
+          onClick={() =>
+            handleOpenWindow("Mis proyectos", <Projects />, "white")
+          }
           className="flex text-amber-300 items-center justify-center hover:transform hover:scale-110 transition-all cursor-pointer"
         >
           <svg
@@ -101,7 +119,7 @@ export default function NavDown() {
         </div>
         <div
           onClick={() =>
-            handleOpenWindow("Experiencia laboral", <WorkExperience />)
+            handleOpenWindow("Experiencia laboral", <WorkExperience />, "white")
           }
           className="flex items-center justify-center hover:transform hover:scale-110 transition-all cursor-pointer"
         >
@@ -126,7 +144,7 @@ export default function NavDown() {
           </svg>
         </div>
         <div
-          onClick={() => handleOpenWindow("Formación", <Education />)}
+          onClick={() => handleOpenWindow("Formación", <Education />, "white")}
           className="flex items-center justify-center hover:transform hover:scale-110 transition-all cursor-pointer"
         >
           <svg
@@ -152,7 +170,13 @@ export default function NavDown() {
           </svg>
         </div>
         <div
-          onClick={() => handleOpenWindow("Quién soy", <ContactForm />)}
+          onClick={() =>
+            handleOpenTerminal(
+              "Terminal de contacto",
+              <ContactShell />,
+              "bg-gray-950"
+            )
+          }
           className="text-sky-300 flex items-center justify-center hover:transform hover:scale-110 transition-all cursor-pointer"
         >
           <svg

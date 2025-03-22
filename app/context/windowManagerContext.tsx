@@ -6,6 +6,7 @@ type WindowData = {
   id: number;
   content: ReactNode;
   title: string;
+  bgColor: string;
   initialWidth: number;
   initialHeight: number;
   position: { x: number; y: number };
@@ -17,6 +18,7 @@ type WindowManagerContextType = {
   addWindow: (
     title: string,
     content: ReactNode,
+    bgColor: string,
     width?: number | string,
     height?: number | string
   ) => void;
@@ -46,6 +48,7 @@ export const WindowManagerProvider = ({
   const addWindow = (
     title: string,
     content: ReactNode,
+    bgColor: string,
     width: number | string = 400,
     height: number | string = 300
   ) => {
@@ -64,6 +67,7 @@ export const WindowManagerProvider = ({
       id: windowId,
       title,
       content,
+      bgColor,
       initialWidth: parsedWidth,
       initialHeight: parsedHeight,
       position: getCenteredPosition(parsedWidth, parsedHeight),
@@ -94,6 +98,7 @@ export const WindowManagerProvider = ({
           <DraggableDiv
             key={win.id}
             title={win.title}
+            bgColor={win.bgColor}
             initialWidth={win.initialWidth}
             initialHeight={win.initialHeight}
             position={win.position}

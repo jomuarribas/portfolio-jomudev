@@ -15,10 +15,10 @@ export default function Home() {
   useEffect(() => {
     if (!hasOpenedWelcome.current) {
       if (window.innerWidth < 768) {
-        addWindow("Bienvenid@", <Welcome />, "95%", "70%");
+        addWindow("Bienvenid@", <Welcome />, "white", "95%", "70%");
         hasOpenedWelcome.current = true;
       } else {
-        addWindow("Bienvenid@", <Welcome />, "50%", "60%");
+        addWindow("Bienvenid@", <Welcome />, "white", "50%", "60%");
         hasOpenedWelcome.current = true;
       }
     }

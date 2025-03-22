@@ -46,7 +46,7 @@ export default function Education() {
       <div className="flex justify-center items-center">
         <TypingText text="Formación" />
       </div>
-      <div className="flex flex-wrap gap-3">
+      <div className="flex justify-center flex-wrap gap-3">
         {icons.map((item, index) => (
           <motion.div
             key={index}

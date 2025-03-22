@@ -2,6 +2,7 @@
 import { useState } from "react";
 import TypingText from "../TypingText";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 type Project = {
   title: string;
@@ -87,20 +88,38 @@ export default function Projects() {
       <div className="flex justify-center items-center">
         <TypingText text="Mis Proyectos" />
       </div>
-      <p className="mb-3 text-gray-700 text-center max-w-2xl">
+      <p className="mb-3 text-gray-700 text-justify max-w-2xl">
         Cada uno de estos proyectos refleja mi pasión por el desarrollo web, la
         creatividad y mi constante deseo de aprender. ¡Explóralos y descubre
         cómo he transformado ideas en soluciones reales!
       </p>
-      <div className="flex flex-wrap gap-5 justify-center">
+      <motion.div
+        className="flex flex-wrap gap-5 justify-center"
+        initial="hidden"
+        animate="visible"
+        variants={{
+          hidden: { opacity: 0 },
+          visible: {
+            opacity: 1,
+            transition: { staggerChildren: 0.3 },
+          },
+        }}
+      >
         {projects.map((project, index) => (
-          <div
+          <motion.div
             key={index}
             className={`h-[620px] bg-gradient-to-t from-white to-yellow-100 relative flex flex-col max-w-[340px] items-center border border-gray-300 rounded-lg ${
               hoveredIndex === index ? "shadow-2xl" : "shadow-lg"
             } hover:scale-105 transform transition-all`}
             onMouseEnter={() => setHoveredIndex(index)}
             onMouseLeave={() => setHoveredIndex(null)}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.1 }}
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+            }}
           >
             <div className="w-full h-[220px]">
               <Image
@@ -114,13 +133,13 @@ export default function Projects() {
 
             <div className="flex flex-col gap-4 p-4 w-full">
               <h3 className="text-xl text-center font-bold">{project.title}</h3>
-              <p className="text-sm text-[var(--primary-color-dark)] text-justify">
+              <p className="text-sm text-gray-700 text-justify">
                 {project.description}
               </p>
-              <p className="text-sm text-[var(--primary-color-dark)]">
+              <p className="text-sm text-gray-700">
                 <strong>Tecnologías:</strong> {project.tech}
               </p>
-              <p className="text-sm text-[var(--primary-color-dark)]">
+              <p className="text-sm text-gray-700">
                 <strong>Mi trabajo:</strong> {project.type}
               </p>
               {project.more_link && (
@@ -156,9 +175,9 @@ export default function Projects() {
                 Ver Código
               </a>
             </div>
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
       <p className="pb-6">Próximamente mas...</p>
     </section>
   );

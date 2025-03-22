@@ -4,16 +4,6 @@ import TypingText from "../TypingText";
 export default function WorkExperience() {
   const experiences = [
     {
-      company: "Dial Rock (Estudio de grabación)",
-      position: "Productor musical",
-      duration: "Enero de 2009 - Presente (16 años 3 meses)",
-      location: "San Fernando de Henares, Comunidad de Madrid, España",
-      description: `
-        Productor musical en Dial Rock. Desempeñando funciones de Grabación, Mezcla y Masterización y
-        producciones de música en directo.
-      `,
-    },
-    {
       company: "Igrowker - Acelerando Juniors IT",
       position: "Full Stack Developer",
       duration: "Septiembre de 2024 - Octubre de 2024 (2 meses)",
@@ -23,6 +13,16 @@ export default function WorkExperience() {
         Perfil MERN Stack trabajando con Next.Js y Tailwind en el frontend y realizando tareas de apoyo al backend.
         Entre otros componentes y funciones, realicé un mapa de calor que mostraba en tiempo real la afluencia
         de gente en destinos recomendados según tu ubicación actual.
+      `,
+    },
+    {
+      company: "Dial Rock (Estudio de grabación)",
+      position: "Productor musical",
+      duration: "Enero de 2009 - Presente (16 años 3 meses)",
+      location: "San Fernando de Henares, Comunidad de Madrid, España",
+      description: `
+        Productor musical en Dial Rock. Desempeñando funciones de Grabación, Mezcla y Masterización y
+        producciones de música en directo.
       `,
     },
     {
@@ -69,14 +69,14 @@ export default function WorkExperience() {
             </p>
             <p className="text-sm text-gray-600">{experience.duration}</p>
             <p className="text-sm text-gray-600">{experience.location}</p>
-            <p className="text-[var(--primary-color-dark)] leading-relaxed">
+            <p className="text-gray-700 leading-relaxed">
               {experience.description}
             </p>
           </motion.div>
         ))}
       </motion.div>
       <motion.p
-        className="pb-4 text-center text-gray-700"
+        className="pb-4 text-justify text-gray-700"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1, duration: 0.5 }}

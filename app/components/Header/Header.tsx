@@ -21,7 +21,7 @@ export default function Header() {
   }, []);
 
   return (
-    <header className="flex w-full px-3 justify-between items-center h-8 bg-[#1a1a1a] text-white">
+    <header className="flex w-full px-3 justify-between items-center h-8 bg-[var(--primary-color)] text-white">
       <div className="flex items-center space-x-1 text-sky-300">
         <svg
           version="1.0"

@@ -26,7 +26,7 @@ export default function TypingText({ text, className = "" }: TypingTextProps) {
 
   return (
     <motion.div
-      className={`inline-block text-3xl font-bold text-center text-black ${className}`}
+      className={`inline-block text-2xl font-bold text-center text-black ${className}`}
       variants={container}
       initial="hidden"
       animate="visible"

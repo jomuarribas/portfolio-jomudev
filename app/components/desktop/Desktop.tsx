@@ -50,6 +50,29 @@ export default function Desktop() {
           </Link>
           <p className="text-[15px] text-white mt-1 text-center">GitHub</p>
         </div>
+        <div>
+          <Link
+            href="https://vercel.com/jomuarribas"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex flex-col gap-1 items-center"
+          >
+            <div className="bg-[var(--primary-color)] text-white cursor-pointer rounded-2xl">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="60"
+                height="60"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                className="icon icon-tabler icons-tabler-filled icon-tabler-brand-vercel p-2"
+              >
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path d="M11.143 3.486a1 1 0 0 1 1.714 0l9 15a1 1 0 0 1 -.857 1.514h-18a1 1 0 0 1 -.857 -1.514z" />
+              </svg>
+            </div>
+          </Link>
+          <p className="text-[15px] text-white mt-1 text-center">Vercel</p>
+        </div>
       </div>
     </section>
   );

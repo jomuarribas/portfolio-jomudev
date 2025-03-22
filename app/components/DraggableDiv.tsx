@@ -1,8 +1,10 @@
+import Image from "next/image";
 import React, { useState } from "react";
 
 type DraggableDivProps = {
   children: React.ReactNode;
   title: string;
+  bgColor: string;
   initialWidth: number;
   initialHeight: number;
   position: { x: number; y: number };
@@ -14,6 +16,7 @@ type DraggableDivProps = {
 const DraggableDiv: React.FC<DraggableDivProps> = ({
   children,
   title,
+  bgColor,
   initialWidth,
   initialHeight,
   position: initialPosition,
@@ -102,7 +105,11 @@ const DraggableDiv: React.FC<DraggableDivProps> = ({
 
   return (
     <div
-      className="absolute bg-gradient-to-b shadow-[5px_7px_20px_5px_rgba(0,0,0,0.7)] from-white to-sky-200 border border-gray-500 rounded-lg min-w-[220px] min-h-[220px]"
+      className={`absolute ${
+        bgColor === "white"
+          ? "bg-gradient-to-b shadow-[3px_5px_20px_5px_rgba(0,0,0,0.5)] from-white to-sky-200"
+          : `${bgColor}`
+      } border border-gray-500 rounded-lg min-w-[220px] min-h-[220px]`}
       style={{
         left: `${position.x}px`,
         top: `${position.y}px`,
@@ -119,19 +126,34 @@ const DraggableDiv: React.FC<DraggableDivProps> = ({
         <div className="text-white">{title}</div>{" "}
         <div className="flex">
           <div
-            className="flex items-center text-[12px] text-gray-800 justify-center w-4 h-4 bg-red-500 rounded-full mr-2 cursor-pointer"
+            className="flex items-center justify-center h-6 w-6 cursor-pointer"
             onClick={onClose}
           >
-            x
+            <Image
+              src="/buttons/cls.png"
+              alt="Foto de José Muñoz"
+              width={14.5}
+              height={14.5}
+            />
           </div>
           <div
-            className="flex items-center text-[16px] text-gray-800 justify-center w-4 h-4 bg-yellow-500 rounded-full mr-2 cursor-pointer"
+            className="flex items-center justify-center h-6 w-6 cursor-pointer"
             onClick={onClose}
           >
-            -
+            <Image
+              src="/buttons/min.png"
+              alt="Foto de José Muñoz"
+              width={14.5}
+              height={14.5}
+            />
           </div>
-          <div className="rotate-45 flex items-center text-[8px] text-gray-800 justify-center w-4 h-4 bg-green-500 rounded-full cursor-pointer">
-            {"< >"}
+          <div className="flex items-center justify-center h-6 w-6 cursor-pointer">
+            <Image
+              src="/buttons/max.png"
+              alt="Foto de José Muñoz"
+              width={14.5}
+              height={14.5}
+            />
           </div>
         </div>
       </div>
