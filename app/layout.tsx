@@ -1,4 +1,4 @@
-import type { Viewport } from "next";
+import type { Viewport, Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { WindowManagerProvider } from "./context/windowManagerContext";
@@ -21,23 +21,27 @@ export const viewport: Viewport = {
   userScalable: false,
 };
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "jomuDev - Portfolio",
   description: "Porfolio de Jonathan Muñoz Arribas (jomuDev)",
-  url: "https://www.jomudev.com",
-  siteName: "jomuDev",
-  StyleSheet: "/styles/globals.css?v=1.0.1",
-  favicon: "/favicon.ico",
-  Autor: "Jonathan Muñoz Arribas",
+  metadataBase: new URL("https://next-learn-dashboard.vercel.sh"),
+  authors: [{ name: "Jonathan Muñoz Arribas", url: "https://www.jomudev.com" }],
   keywords:
     "Desarrollador, Frontend, Backend, Fullstack, Web, Móvil, Apps, React, Node, Next, Typescript, Javascript, HTML, CSS, Tailwind, Material, UI, UX, Design, Portfolio, jomuDev",
   openGraph: {
     title: "jomuDev - Portfolio",
-    description: "Porfolio de Jonathan Muñoz Arribas (jomuDev).",
-    image: "/icons/icon-512x512.png",
+    description: "Porfolio de Jonathan Muñoz Arribas (jomuDev)",
     url: "https://www.jomudev.com",
+    siteName: "jomuDev",
+    images: [
+      {
+        url: "/icons/icon-512x512.png",
+        width: 512,
+        height: 512,
+        alt: "jomuDev Logo",
+      },
+    ],
     type: "website",
-    site_name: "jomuDev",
   },
 };
 
