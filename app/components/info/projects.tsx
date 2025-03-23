@@ -165,7 +165,7 @@ export default function Projects() {
                 Ver Proyecto
               </a>
               <a
-                href={project.link}
+                href={project.link_code}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`${
