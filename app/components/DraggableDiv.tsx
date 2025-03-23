@@ -125,12 +125,9 @@ const DraggableDiv: React.FC<DraggableDivProps> = ({
       >
         <div className="text-white">{title}</div>{" "}
         <div className="flex">
-          <div
-            className="flex items-center justify-center h-6 w-6 cursor-pointer"
-            onClick={onClose}
-          >
+          <div className="flex items-center justify-center h-6 w-6 cursor-pointer">
             <Image
-              src="/buttons/cls.png"
+              src="/buttons/max.png"
               alt="Foto de José Muñoz"
               width={14.5}
               height={14.5}
@@ -147,9 +144,12 @@ const DraggableDiv: React.FC<DraggableDivProps> = ({
               height={14.5}
             />
           </div>
-          <div className="flex items-center justify-center h-6 w-6 cursor-pointer">
+          <div
+            className="flex items-center justify-center h-6 w-6 cursor-pointer"
+            onClick={onClose}
+          >
             <Image
-              src="/buttons/max.png"
+              src="/buttons/cls.png"
               alt="Foto de José Muñoz"
               width={14.5}
               height={14.5}
