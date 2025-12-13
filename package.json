@@ -11,8 +11,8 @@
   "dependencies": {
     "date-fns": "^4.1.0",
     "framer-motion": "^12.5.0",
-    "next": "15.2.2",
-    "nodemailer": "^6.10.0",
+    "next": "latest",
+    "nodemailer": "^7.0.11",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
