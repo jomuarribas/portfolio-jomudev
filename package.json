@@ -11,10 +11,10 @@
   "dependencies": {
     "date-fns": "^4.1.0",
     "framer-motion": "^12.5.0",
-    "next": "latest",
+    "next": "^15.2.6",
     "nodemailer": "^7.0.11",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react": "^19.0.1",
+    "react-dom": "^19.0.1"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
