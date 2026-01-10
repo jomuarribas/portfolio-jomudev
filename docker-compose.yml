@@ -1,7 +1,7 @@
 version: "3.8"
 
 services:
-  portfolio:
+  jomudev-portfolio:
     build:
       context: .
       dockerfile: Dockerfile
@@ -10,5 +10,7 @@ services:
     environment:
       - NODE_ENV=production
       - NEXT_TELEMETRY_DISABLED=1
+      - EMAIL_USER={EMAIL_USER}
+      - EMAIL_PASS={EMAIL_PASS}
     restart: unless-stopped
     container_name: portfolio-jomudev
